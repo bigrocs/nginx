@@ -1,0 +1,29 @@
+version: '2'
+services:
+### NGINX Server Container ##################################
+
+    nginx:
+      build:
+        context: ./
+        args:
+          - PHP_52_PORT=9052
+          - PHP_53_PORT=9053
+          - PHP_54_PORT=9054
+          - PHP_55_PORT=9055
+          - PHP_56_PORT=9056
+          - PHP_70_PORT=9070
+          - PHP_71_PORT=9071
+          - PHP_SERVER=127.0.0.7
+      volumes:
+        - ./logs/nginx/:/var/log/nginx
+        - ./config/sites/:/etc/nginx/sites-available
+        - ./config/nginx.conf/:/etc/nginx/nginx.conf
+        - ./wwwroot:/var/www
+      ports:
+        - "80:80"
+        - "443:443"
+### Volumes Setup #############################################
+
+# volumes:
+#   mysql:
+#     driver: "local"
