@@ -8,6 +8,7 @@ RUN apk update \
     && adduser -D -H -u 1000 -s /bin/bash www-data
 
 # Set upstream conf and remove the default conf
+RUN rm /etc/nginx/conf.d/default.conf
 
 CMD ["nginx"]
 
