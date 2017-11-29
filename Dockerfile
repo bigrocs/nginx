@@ -1,6 +1,6 @@
 FROM nginx:alpine
 
-MAINTAINER Mahmoud Zalt <bigrocs@qq.com>
+MAINTAINER Mahmoud Zalt <mahmoud@zalt.me>
 
 ARG PHP_52_PORT=9052
 ENV PHP_52_PORT ${PHP_52_PORT}
