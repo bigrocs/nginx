@@ -5,11 +5,11 @@ services:
     nginx:
       image: bigrocs/nginx:latest
       volumes:
-        - sshvolume/logs/nginx:/var/log/nginx
-        - sshvolume/nginx/sites:/etc/nginx/sites-available
-        - sshvolume/nginx/nginx.conf:/etc/nginx/nginx.conf
-        - sshvolume/nginx/conf.d/upstream.conf:/etc/nginx/conf.d/upstream.conf
-        - sshvolume/wwwroot:/var/www
+        - /www/logs/nginx:/var/log/nginx
+        - /www/nginx/sites:/etc/nginx/sites-available
+        - /www/nginx/nginx.conf:/etc/nginx/nginx.conf
+        - /www/nginx/conf.d/upstream.conf:/etc/nginx/conf.d/upstream.conf
+        - /www/wwwroot:/var/www
       ports:
         - "80:80"
         - "443:443"
