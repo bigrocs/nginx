@@ -5,19 +5,19 @@ services:
     nginx:
       image: bigrocs/nginx:latest
       volumes:
-        - sshvolume/logs/nginx/:/var/log/nginx
-        - sshvolume/nginx/sites/:/etc/nginx/sites-available
-        - sshvolume/nginx/nginx.conf/:/etc/nginx/nginx.conf
-        - sshvolume/nginx/conf.d/upstream.conf/:/etc/nginx/conf.d/upstream.conf
+        - sshvolume/logs/nginx:/var/log/nginx
+        - sshvolume/nginx/sites:/etc/nginx/sites-available
+        - sshvolume/nginx/nginx.conf:/etc/nginx/nginx.conf
+        - sshvolume/nginx/conf.d/upstream.conf:/etc/nginx/conf.d/upstream.conf
         - sshvolume/wwwroot:/var/www
       ports:
         - "80:80"
         - "443:443"
 ### Volumes Setup #############################################
 
-volumes:
-  sshvolume:
-    driver: " vieux/sshfs"
-    driver_opts:
-      sshcmd: root@172.16.84.200:/www
-      password: <password>
+    volumes:
+      sshvolume:
+        driver: " vieux/sshfs"
+        driver_opts:
+          sshcmd: root@172.16.84.200:/www
+          password: 001pengjie
