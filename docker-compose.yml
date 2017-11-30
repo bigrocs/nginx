@@ -15,6 +15,9 @@ services:
         - "443:443"
 ### Volumes Setup #############################################
 
-# volumes:
-#   sshvolume:
-#     driver: " vieux/sshfs"
+volumes:
+  sshvolume:
+    driver: " vieux/sshfs"
+    driver_opts:
+      sshcmd: root@172.16.84.200:/www
+      password: <password>
