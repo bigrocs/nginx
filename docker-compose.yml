@@ -16,5 +16,5 @@ services:
 ### Volumes Setup #############################################
 
 # volumes:
-#   mysql:
-#     driver: "local"
+#   sshvolume:
+#     driver: " vieux/sshfs"
